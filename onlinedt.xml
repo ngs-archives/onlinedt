@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
 <ModulePrefs
-	title="Online DateTime"
+	title="OneLine DateTime"
 	title_url="http://code.google.com/p/onlinedt/"
 	description="Simply display date/time on your iGoogle, Gmail Sidebar."
 	height="35" scrolling="false" singleton="false"
