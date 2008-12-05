@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+<ModulePrefs
+	title="Online DateTime"
+	title_url="http://code.google.com/p/onlinedt/"
+	description="Simply display date/time on your iGoogle, Gmail Sidebar."
+	height="35" scrolling="false" singleton="false"
+	screenshot="http://onlinedt.googlecode.com/svn/trunk/capture.jpg"
+	thumbnail="http://onlinedt.googlecode.com/svn/trunk/thumbnail.png"
+
+	author="Atsushi Nagase"
+	author_location="Meguro Tokyo,JAPAN"
+	author_aboutme="Web Engineer"
+	author_link="http://ngsdev.org/"
+	author_email="atsn.ngs@gmail.com"
+	author_photo="http://onlinedt.googlecode.com/svn/trunk/nagase.png"
+/>
+<Content type="html"><![CDATA[
+	<style type="text/css">
+		body { background:#333; color:#fff; }
+		div#clock { font-size:12px; padding:8px 0; text-align:center; }
+	</style>
+	<div id="clock"></div>
+	<script type="text/javascript">
+		(function(){
+			var e = document.getElementById("clock");
+			var tid;
+			function update() {
+				var d = new Date();
+				var da = d.getDate();
+				e.innerHTML = [
+					[tdg(d.getHours()),tdg(d.getMinutes()),tdg(d.getSeconds())].join(":"),
+					["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()],
+					["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][d.getMonth()],
+					da+(da==11?"th":(da%10==1?"st":(da%10==2?"nd":(da%10==3?"rd":"th")))),
+					d.getFullYear()
+				].join(" ");
+				tid = setTimeout(update,1000-d.getMilliseconds());
+			}
+			function tdg(n) { return n<10?"0"+n.toString():n.toString(); }
+			update();
+		})();
+	</script>
+]]></Content>
+</Module>
