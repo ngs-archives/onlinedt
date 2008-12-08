@@ -28,8 +28,9 @@
 			function update() {
 				var d = new Date();
 				var da = d.getDate();
+				var sec = d.getSeconds();
 				e.innerHTML = [
-					[tdg(d.getHours()),tdg(d.getMinutes()),tdg(d.getSeconds())].join(":"),
+					[tdg(d.getHours()),tdg(d.getMinutes()),tdg(sec)].join("<span style=\"color:#"+(sec%2?"eee":"fff")+";\">:<\/span>"),
 					["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()],
 					["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][d.getMonth()],
 					da+(da==11?"th":(da%10==1?"st":(da%10==2?"nd":(da%10==3?"rd":"th")))),
