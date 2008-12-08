@@ -18,7 +18,7 @@
 <Content type="html"><![CDATA[
 	<style type="text/css">
 		body { background:#333; color:#fff; }
-		div#clock { font-size:12px; padding:8px 0; text-align:center; }
+		div#clock { font-size:12px; padding:8px 0; text-align:center; white-space:nowrap; }
 	</style>
 	<div id="clock"></div>
 	<script type="text/javascript">
